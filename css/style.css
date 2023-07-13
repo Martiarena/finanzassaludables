@@ -1,0 +1,83 @@
+html {
+	height: 100%;
+}
+body {
+	background: url("../img/background.png");
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	position: relative;
+	font-family: 'Edu TAS Beginner', cursive;
+	font-weight: 100;
+	font-size: 1.3em;
+}
+strong {
+	color: wheat;
+}
+#miFormulario {
+	background-color: #20504F;
+	color: white;
+	padding: 15px;
+	width: 100%;
+	max-width: 680px;
+	max-height: 500px;
+	border: 10px solid white;
+    	box-sizing: border-box;
+	position: relative;
+	height: 100%;
+	box-shadow: 5px 5px black;
+}
+#idol {
+	position: absolute;
+	left: 10%;
+	bottom: 10%;
+	background: url(img/platform.png) no-repeat bottom center;
+	padding-bottom: 32px;
+	width: 100%;
+	max-width: 178px;
+	display: flex;
+	justify-content: center;
+}
+.idol-girl {
+	background: url(img/idol1.png) no-repeat center;
+	width: 178px;
+	height: 193px;
+}
+.titulo {
+	font-family: 'Rubik Dirt', cursive;
+	text-align: center;
+	font-weight: 100;
+	margin-top: 0;
+}
+input[type=text] {
+	background: transparent;
+	border: white 3px dotted;
+	color: yellow;
+	font-family: 'Edu TAS Beginner';
+	font-size: 1em;
+	padding: 3px 10px;
+}
+input[type=text]:focus-visible {
+	border: white 3px dotted;
+}
+input[type="button"] {
+	background: white;
+	border: 0px solid;
+	padding: 10px 15px;
+	color: #005150;
+	font-weight: 700;
+	font-family: 'Edu TAS Beginner';
+	text-transform: uppercase;
+	cursor: pointer;
+}
+button[type="reset"] {
+	background: white;
+	border: 0px solid;
+	padding: 10px 15px;
+	color: #005150;
+	font-weight: 700;
+	font-family: 'Edu TAS Beginner';
+	text-transform: uppercase;
+	cursor: pointer;
+}

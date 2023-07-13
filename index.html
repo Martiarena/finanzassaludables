@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calcular Finanzas Saludables</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Rubik+Dirt&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<form id="miFormulario">
+	<h1 class="titulo">Finanzas Saludables</h1>
+	<table border="0" width="100%">
+	<tr>
+		<td><label for="ingresos"><strong>Ingresar ganancia mensual:</strong></label></td>
+		<td><input type="text" id="ingresos" name="ingresos" placeholder="0.00"></td>
+	</tr>
+	<tr class="estado">
+		<td valign="top"><label><strong>¿Tienes pareja?</strong></label></td>
+		<td><div><input type="radio" id="soltero" name="estado" value="0" checked><label for="soltero">Soltero pero feliz :).</label></div><div><input type="radio" id="relacion" name="estado" value="1"><label for="relacion">Felizmente emparejado :D.</label></div></td>
+	</tr>
+	<tr class="karma">
+		<td valign="top"><label><strong>¿Buscas buen Karma?</strong></label></td>
+		<td><div><input type="radio" id="no" name="karma" value="0" checked><label for="no">No creo en el karma xd.</label></div><div><input type="radio" id="si" name="karma" value="1"><label for="si">Si :D.</label></div></td>
+	</tr>
+	<tr>
+		<td><strong>Para invertir:</strong></td>
+		<td><span id="InverR"></span></td>
+	</tr>
+	<tr>
+		<td><strong>Para infraestructura:</strong></td>
+		<td><span id="InfraR"></span></td>
+	</tr>
+	<tr>
+		<td><strong>Para entretenimiento:</strong></td>
+		<td><span id="DiverR1"></span> <span id="DiverR2"></span></td>
+	</tr>
+	<tr>
+		<td><div id="ParejaTxt"></div></td>
+		<td><div id="Pareja"></div></td>
+	</tr>
+	<tr>
+		<td><div id="DonacionTxt"></div></td>
+		<td><div id="Donacion"></div></td>
+	</tr>
+	<tr>
+		<td><strong>Para el ahorro:</strong></td>
+		<td><span id="Ahorro"></span></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" value="Obtener valores" onclick="obtenerValores()">
+			<button type="reset">Reiniciar</button>
+		</td>
+	</tr>
+	</table>
+</form>
+<div id="idol">
+	<div class="idol-girl"></div>
+</div>
+<script>
+function obtenerValores() {
+	var ingresos = document.getElementById("ingresos").value;
+	var invertir = (ingresos * 10 / 100);
+	var infraestructura = (ingresos * 10 / 100);
+	var diversion = (ingresos * 4 / 100);
+	var hormiga = (diversion * 10 / 100);
+	var gastos = (invertir + infraestructura + diversion);
+	var resultado = (ingresos - gastos);
+	var pareja;
+	var donacion;
+	var estado;
+
+	var estadoRadios = document.getElementsByName("estado");
+	var karmaRadios = document.getElementsByName("karma");
+	for (var i = 0; i < estadoRadios.length; i++) {
+		if (estadoRadios[i].checked) {
+			estado = estadoRadios[i].value;
+			break;
+		}
+	}
+	if (estado == 1){
+		pareja = (ingresos * 4 / 100);
+		resultado = (resultado - pareja);
+	}
+	for (var i = 0; i < karmaRadios.length; i++) {
+		if (karmaRadios[i].checked) {
+			karma = karmaRadios[i].value;
+			break;
+		}
+	}
+	if (karma == 1){
+		donacion = (ingresos * 4 / 100);
+		resultado = (resultado - donacion);
+	}
+
+	document.getElementById('InverR').innerHTML = invertir;
+	document.getElementById('InfraR').innerHTML = infraestructura;
+	document.getElementById('DiverR1').innerHTML = (diversion - hormiga);
+	document.getElementById('DiverR2').innerHTML = "(" + hormiga + " para gastos hormiga)" ;
+	if (estado == 1){
+		document.getElementById('ParejaTxt').innerHTML = "<strong>Para la pareja:</strong> ";
+		document.getElementById('Pareja').innerHTML = pareja;
+	} else {
+		document.getElementById('ParejaTxt').innerHTML = "";
+		document.getElementById('Pareja').innerHTML = "";
+	}
+	if (karma == 1){
+		document.getElementById('DonacionTxt').innerHTML = "<strong>Para donar:</strong> ";
+		document.getElementById('Donacion').innerHTML = donacion;
+	} else {
+		document.getElementById('DonacionTxt').innerHTML = "";
+		document.getElementById('Donacion').innerHTML = "";
+	}
+	document.getElementById('Ahorro').innerHTML = resultado;
+
+}
+</script>
+</body>
+</html>
