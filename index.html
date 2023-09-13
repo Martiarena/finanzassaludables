@@ -12,12 +12,12 @@
 	<h1 class="titulo">Finanzas Saludables</h1>
 	<table border="0" width="100%">
 	<tr>
-		<td><label for="ingresos"><strong>Ingresar ganancia mensual:</strong></label></td>
-		<td><input type="text" id="ingresos" name="ingresos" placeholder="0.00"></td>
+		<td width="40%"><label for="ingresos"><strong>Ingresar ganancia mensual:</strong></label></td>
+		<td width="60%"><input type="text" id="ingresos" name="ingresos" placeholder="0.00"></td>
 	</tr>
 	<tr class="estado">
-		<td valign="top"><label><strong>¿Tienes pareja?</strong></label></td>
-		<td><div><input type="radio" id="soltero" name="estado" value="0" checked><label for="soltero">Soltero pero feliz :).</label></div><div><input type="radio" id="relacion" name="estado" value="1"><label for="relacion">Felizmente emparejado :D.</label></div></td>
+		<td valign="top"><label><strong>¿Tienes pareja o waifu?</strong></label></td>
+		<td><div><input type="radio" id="soltero" name="estado" value="0" checked><label for="soltero">Soltero pero feliz :).</label></div><div><input type="radio" id="relacion" name="estado" value="1"><label for="relacion">Tengo Waifu xd.</label></div></td>
 	</tr>
 	<tr class="karma">
 		<td valign="top"><label><strong>¿Buscas buen Karma?</strong></label></td>
@@ -63,7 +63,7 @@ function obtenerValores() {
 	var ingresos = document.getElementById("ingresos").value;
 	var invertir = (ingresos * 10 / 100);
 	var infraestructura = (ingresos * 10 / 100);
-	var diversion = (ingresos * 4 / 100);
+	var diversion = (ingresos * 6 / 100); // Anterior: (ingresos * 4 / 100);
 	var hormiga = (diversion * 10 / 100);
 	var gastos = (invertir + infraestructura + diversion);
 	var resultado = (ingresos - gastos);
